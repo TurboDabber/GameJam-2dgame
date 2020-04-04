@@ -221,6 +221,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement_speed: 10
   rigidbody: {fileID: 8501985}
+  animator: {fileID: 8501987}
+  time_to_dance: 30
 --- !u!50 &8501985
 Rigidbody2D:
   serializedVersion: 4
