@@ -26,14 +26,14 @@ public class instantiateTiles : MonoBehaviour
                     buff_vec.x += j;
                     buff_vec.y += i;
                     random = Random.Range(0, myGrounds.Length);
-                    Instantiate(myGrounds[random], pos_vec, Quaternion.identity);
+                    Instantiate(myGrounds[random], buff_vec, Quaternion.identity);
                 }
                 if(game_board[i,j]==2)
                 {
                     buff_vec.x += j;
                     buff_vec.y += i;
                     random = Random.Range(0, myWalls.Length);
-                    Instantiate(myWalls[random], pos_vec, Quaternion.identity);
+                    Instantiate(myWalls[random], buff_vec, Quaternion.identity);
                 }
             }
         /*
@@ -65,8 +65,8 @@ public class instantiateTiles : MonoBehaviour
     void Board_init()
     {
         int a = height / 2, b = width / 2;
-        for(int i=a-2;i<a+2;i++)
-            for(int j=b-2;j<b+2;j++)
+        for(int i=a-3;i<a+3;i++)
+            for(int j=b-3;j<b+3;j++)
             {
                 game_board[i, j] = 1;
             }
