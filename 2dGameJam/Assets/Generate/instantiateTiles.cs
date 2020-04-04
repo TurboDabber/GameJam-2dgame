@@ -6,9 +6,9 @@ public class instantiateTiles : MonoBehaviour
 {
     public GameObject[] myGrounds;
     public GameObject[] myWalls;
-    const int width=300;
-    const int height=300;
-    public  short[,] game_board = new short[height, width];
+    public const int width=300;
+    public const int height=300;
+    public short[,] game_board = new short[height, width];
     private int random;
     public int REPETITIONS = 20;
     // Start is called before the first frame update
@@ -28,7 +28,7 @@ public class instantiateTiles : MonoBehaviour
                     random = Random.Range(0, myGrounds.Length);
                     Instantiate(myGrounds[random], buff_vec, Quaternion.identity);
                 }
-                if(game_board[i,j]==2)
+                else if(game_board[i,j]==2)
                 {
                     buff_vec.x += j;
                     buff_vec.y += i;
@@ -99,9 +99,9 @@ public class instantiateTiles : MonoBehaviour
                     }
                     if (j > 0 && j < (height - 1))
                     {
-                        if (game_board[i, j + 1] == 1)
+                        if (game_board[i, j - 1] == 1)
                         {
-                            game_board[i, j + 1] = 2;
+                            game_board[i, j - 1] = 2;
                         }
                         if (game_board[i, j + 1] == 1)
                         {
