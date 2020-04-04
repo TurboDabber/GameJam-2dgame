@@ -18,7 +18,7 @@ public class instantiateTiles : MonoBehaviour
         Vector3 pos_vec=new Vector3(-width/2, -height/2, 0.0f );
         for(int i=1;i<height-1;i++)
             for(int j=1;j<width-1;j++)
-            {
+            { 
                 Vector3 buff_vec = pos_vec;
                 if (game_board[i,j]==1)
                 {
@@ -74,7 +74,7 @@ public class instantiateTiles : MonoBehaviour
             for (int j = 2; j < width-2; j++)
             {
                
-                random =Random.Range(0,4);
+              //  random =Random.Range(0,4);
 
             }
 
