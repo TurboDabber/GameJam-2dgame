@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 8501982}
   - component: {fileID: 8501984}
   - component: {fileID: 8501985}
+  - component: {fileID: 8501986}
   m_Layer: 8
   m_Name: hero
   m_TagString: Untagged
@@ -240,6 +241,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!70 &8501986
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8501981}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.2, y: 0.47}
+  m_Direction: 0
 --- !u!1 &73839654
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,13 +329,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d3af01a38a9fe4eac33ad387d28f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPrefab:
-  - {fileID: 3237628987292338004, guid: 415fa866e901eb74abeb61823c0b2033, type: 3}
+  myGrounds:
   - {fileID: 8764534093628544494, guid: dba88167237443a429cad3c6472977a8, type: 3}
   - {fileID: 6940769340994886851, guid: 34bd596d122c01840b28f3435ede2996, type: 3}
   - {fileID: 3596845071949925913, guid: a6fa103963ba3294bba750c6ccc951e5, type: 3}
   - {fileID: 6723344374447057177, guid: 977f8c8b4324c12419d01ac8b6c16742, type: 3}
   - {fileID: 7558826747608448485, guid: c7d3711172326104ab7eca49bf1c252f, type: 3}
+  - {fileID: 3237628987292338004, guid: 415fa866e901eb74abeb61823c0b2033, type: 3}
+  - {fileID: 7425311786709422252, guid: 60acc5645a42b7d4aa512b47f1076bf5, type: 3}
+  myWalls: []
   REPETITIONS: 8000
 --- !u!4 &517965327
 Transform:

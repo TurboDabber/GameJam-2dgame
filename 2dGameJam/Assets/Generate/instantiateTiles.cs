@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class instantiateTiles : MonoBehaviour
 {
-    public GameObject[] myPrefab;
+    public GameObject[] myGrounds;
+    public GameObject[] myWalls;
     private int random;
     public int REPETITIONS = 20;
     // Start is called before the first frame update
@@ -13,10 +14,10 @@ public class instantiateTiles : MonoBehaviour
         Vector3 pos_vec=new Vector3( 0.0f, 0.0f, 0.0f );
         for (int i = 0; i < REPETITIONS; i++)
         {
-            random = Random.Range(0, myPrefab.Length);
-            Instantiate(myPrefab[random], pos_vec, Quaternion.identity);
+            random = Random.Range(0, myGrounds.Length);
+            Instantiate(myGrounds[random], pos_vec, Quaternion.identity);
             random = Random.Range(0, 4);
-            if(random==0)
+            if(random==0) 
             {
                 pos_vec.x += 1;
             }
