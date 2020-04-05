@@ -36,6 +36,8 @@ public class controls : MonoBehaviour
             timer = 0;
             if (Input.GetKeyDown(KeyCode.Space))
                 animator.SetTrigger("Basic_attack");
+            if (Input.GetKeyDown(KeyCode.LeftControl))
+                animator.SetTrigger("Piruet");
         }
            
         if (timer > time_to_dance)
