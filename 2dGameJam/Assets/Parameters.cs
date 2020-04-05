@@ -11,6 +11,7 @@ public class Parameters : MonoBehaviour
     bool fail = false;
     public Health healthBar;/// UI bar 
     public CollectedFrames collected;
+    GameObject Ending;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,7 @@ public class Parameters : MonoBehaviour
             TakeDmg(20);
             
         }
+        
     }
     void TakeDmg(int dmg_given)
     {
@@ -51,7 +53,14 @@ public class Parameters : MonoBehaviour
     {
         if(collision.gameObject.tag=="Frame")
         {
+            
+            
             AddFrames();
+            if (collected_frames == 4)
+            {
+                Vector3 SpawnHere = new Vector3(collision.transform.position.x, collision.transform.position.y,0.0f);
+                Instantiate(Ending, SpawnHere, Quaternion.identity);
+            }
             Destroy(collision.gameObject);
         }
     }

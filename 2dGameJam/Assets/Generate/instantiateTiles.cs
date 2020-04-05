@@ -48,12 +48,15 @@ public class instantiateTiles : MonoBehaviour
             {
                 Vector3 buff_vec = pos_vec;
                 int a = Random.Range(0, width), b = Random.Range(0, height);
-                 if (game_board[a,b]==1)
+                if (game_board[a, b] == 1)
                 {
+                   
+
+                    
                     buff_vec.x += b;
                     buff_vec.y += a;
                     buff_vec.z -= 0.1f;
-                    random = Random.Range(0, myPorals.Length-1);
+                    random = Random.Range(0, myPorals.Length - 1);
                     Instantiate(myPorals[i], buff_vec, Quaternion.identity);
                     sucess = true;
                 }
