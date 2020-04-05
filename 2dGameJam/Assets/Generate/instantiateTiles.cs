@@ -6,6 +6,7 @@ public class instantiateTiles : MonoBehaviour
 {
     public GameObject[] myGrounds;
     public GameObject[] myWalls;
+    public GameObject[] myPorals;
     public const int width=500;
     public const int height=500;
     public short[,] game_board = new short[height, width];
@@ -40,6 +41,26 @@ public class instantiateTiles : MonoBehaviour
                     Instantiate(myWalls[random], buff_vec, Quaternion.identity);
                 }
             }
+        for(int i=0;i<4;i++)
+        {
+            bool sucess = false;
+            while(sucess==false)
+            {
+                Vector3 buff_vec = pos_vec;
+                int a = Random.Range(0, width), b = Random.Range(0, height);
+                 if (game_board[a,b]==1)
+                {
+                    buff_vec.x += b;
+                    buff_vec.y += a;
+                    buff_vec.z -= 0.1f;
+                    random = Random.Range(0, myPorals.Length-1);
+                    Instantiate(myPorals[i], buff_vec, Quaternion.identity);
+                    sucess = true;
+                }
+            }
+        }
+
+        
     }
 
     void Board_init()
@@ -113,6 +134,7 @@ public class instantiateTiles : MonoBehaviour
             }
 
          }
+        
     }
     void create_cooridors(int x,int y,int direction)
     {
@@ -220,7 +242,7 @@ public class instantiateTiles : MonoBehaviour
         }
         room_limiter++;
         random = Random.Range(0, room_limiter);
-        if (random < 2)
+        if (random < 2&& room_limiter<14)
         {
             bool dont_once_more = false;
             while (dont_once_more == false)//at least one corridor
