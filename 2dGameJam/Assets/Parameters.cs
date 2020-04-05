@@ -18,8 +18,9 @@ public class Parameters : MonoBehaviour
         healthBar.setMax ( health_max);//////////setting max health
         collected.fillAmount = collected_frames;
         collected.maxAmount = all_frames;
+        collected.setText(0);
     }/// <summary>
-    /// </summary>
+     /// </summary>
 
     // Update is called once per frame
     void Update()
@@ -27,6 +28,7 @@ public class Parameters : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))/////////testing
         {
             TakeDmg(20);
+            
         }
     }
     void TakeDmg(int dmg_given)
@@ -40,8 +42,17 @@ public class Parameters : MonoBehaviour
     }
     void AddFrames()
     {
-        collected.fillAmount = ++collected_frames;
-        collected.setText();
+        collected_frames++;
+        collected.fillAmount = collected_frames;
+        collected.setText(collected.fillAmount);
 
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag=="Frame")
+        {
+            AddFrames();
+            Destroy(collision.gameObject);
+        }
     }
 }

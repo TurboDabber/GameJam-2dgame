@@ -12,8 +12,9 @@ public class CollectedFrames : MonoBehaviour
     [SerializeField]
     public Text information;
 
-   public void setText()
+   public void setText(int i)
     {
+        fillAmount = i;
         string Temp = fillAmount + " / " + maxAmount;
         information.text=Temp;
     }
