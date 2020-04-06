@@ -7,7 +7,7 @@ public class instantiateTiles : MonoBehaviour
     public GameObject[] myGrounds;
     public GameObject[] myWalls;
     public GameObject[] myPorals;
-
+    public GameObject it;
     public const int width=500;
     public const int height=500;
     public short[,] game_board = new short[height, width];
@@ -21,6 +21,7 @@ public class instantiateTiles : MonoBehaviour
     void Start()
     {
         Board_init();
+        int num_of_ground=0;
         Vector3 pos_vec=new Vector3(-width/2, -height/2, 0.0f );
         for(int i=1;i<height-1;i++)
             for(int j=1;j<width-1;j++)
@@ -33,6 +34,7 @@ public class instantiateTiles : MonoBehaviour
                     buff_vec.y += i;
                     random = Random.Range(0, myGrounds.Length);
                     Instantiate(myGrounds[random], buff_vec, Quaternion.identity);
+                    num_of_ground++;
                 }
                 else if(game_board[i,j]==2)
                 {
@@ -65,6 +67,26 @@ public class instantiateTiles : MonoBehaviour
             }
         }
         AstarPath.active.Scan();
+        for (int i = 0; i < num_of_ground/10; i++)
+        {
+            bool sucess = false;
+            while (sucess == false)
+            {
+                Vector3 buff_vec = pos_vec;
+                int a = Random.Range(0, width), b = Random.Range(0, height);
+                if (game_board[a, b] == 1)
+                {
+
+
+
+                    buff_vec.x += b;
+                    buff_vec.y += a;
+                    buff_vec.z -= 0.1f;
+                    Instantiate(it, buff_vec, Quaternion.identity);
+                    sucess = true;
+                }
+            }
+        }
 
 
     }
@@ -76,7 +98,7 @@ public class instantiateTiles : MonoBehaviour
             for(int j=b-3;j<b+3;j++)
             {
                 game_board[i, j] = 1;
-            }
+            }       
         
         
         bool dont_once_more = false;

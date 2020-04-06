@@ -872,6 +872,7 @@ MonoBehaviour:
   - {fileID: 6621186476848386928, guid: b66ccf90e1f6ea24b9332ed0df238b11, type: 3}
   - {fileID: 795389581673933885, guid: 506a16fe2c8092e44a2f03399cf63738, type: 3}
   - {fileID: 8358639039907736363, guid: 6859d432b0528bc4c8fd5045cdc4beb1, type: 3}
+  it: {fileID: 560342846}
   min_room: 10
   max_room: 30
   min_corridor: 30
@@ -890,6 +891,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &560342846 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3296524336077992607, guid: f39184508f3d5c844b6c80b585acfa1f,
+    type: 3}
+  m_PrefabInstance: {fileID: 6557635254817118728}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &583965142
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,7 +19,7 @@ public class Parameters : MonoBehaviour
     {
         health_now = health_max;
         healthBar.setMax(health_max);//////////setting max health
-        collected_frames = 3;
+     //   collected_frames = 3;
         collected.fillAmount = collected_frames.ToString( );
         collected.maxAmount = all_frames;
         collected.setText("0");
