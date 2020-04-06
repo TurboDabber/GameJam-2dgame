@@ -24,8 +24,9 @@ public class controls : MonoBehaviour
     float basic_attack_time;
     float basic_attack_timer = 0;
     bool active_animation = false;
+    public Attacks attacks;
     Vector2 movement;
-    Vector2 prev_move;
+     public Vector2 prev_move;
 
     private void Start()
     {
@@ -88,24 +89,28 @@ public class controls : MonoBehaviour
             {
                 animator.SetTrigger("Basic_attack");
                 active_animation = true;
+                attacks.Basic_attack();
                 basic_attack_timer = 0;
             }
             else if (Input.GetKeyDown(KeyCode.LeftControl) && piruet_timer >= piruet_cooldown)
             {
                 animator.SetTrigger("Piruet");
                 active_animation = true;
+                attacks.Piruet();
                 piruet_timer = 0;
             }     
             else if (Input.GetKeyDown(KeyCode.LeftShift) && powerful_timer >= powerful_cooldown)
             {
                 animator.SetTrigger("Powerful");
                 active_animation = true;
+                attacks.Powerful_attack();
                 powerful_timer = 0;
             }    
             else if (Input.GetKeyDown(KeyCode.LeftAlt) && heal_timer >= heal_cooldown)
             {
                 animator.SetTrigger("Sword_up");
                 active_animation = true;
+                attacks.Heal();
                 heal_timer = 0;
             }    
         }

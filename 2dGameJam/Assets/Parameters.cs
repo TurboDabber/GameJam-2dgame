@@ -29,11 +29,11 @@ public class Parameters : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))/////////testing
-        {
-            TakeDmg(20);
+        //if (Input.GetKeyDown(KeyCode.Space))/////////testing
+        //{
+        //    TakeDmg(20);
 
-        }
+        //}
 
     }
     void TakeDmg(float dmg_given)
