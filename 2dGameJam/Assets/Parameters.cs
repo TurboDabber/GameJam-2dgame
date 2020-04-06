@@ -6,7 +6,7 @@ using System;
 public class Parameters : MonoBehaviour
 {
     public const int health_max = 100;
-    public int health_now = 100;
+    public float health_now = 100;
     public int collected_frames = 0;
     public const int all_frames = 4;
     public bool fail = false;
@@ -36,7 +36,7 @@ public class Parameters : MonoBehaviour
         }
 
     }
-    void TakeDmg(int dmg_given)
+    void TakeDmg(float dmg_given)
     {
         health_now -= dmg_given;
         if (health_now < 0)

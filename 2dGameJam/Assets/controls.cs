@@ -29,6 +29,7 @@ public class controls : MonoBehaviour
 
     private void Start()
     {
+        piruet.setMax(piruet_cooldown);
         AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
 
         foreach (AnimationClip clip in clips)
