@@ -38,7 +38,7 @@ public class Attacks : MonoBehaviour
 
             foreach (Collider2D enemy in hit_enemies)
             {
-                Debug.Log("Hit!");
+                enemy.GetComponent<monster_dmg>().TakeDmg(3);
             }
         }
         else if(attack_horizontal > 0)
@@ -47,7 +47,7 @@ public class Attacks : MonoBehaviour
 
             foreach (Collider2D enemy in hit_enemies)
             {
-                Debug.Log("Hit!");
+                enemy.GetComponent<monster_dmg>().TakeDmg(3);
             }
         }
         else if(attack_vertical < 0)
@@ -56,7 +56,7 @@ public class Attacks : MonoBehaviour
 
             foreach (Collider2D enemy in hit_enemies)
             {
-                Debug.Log("Hit!");
+                enemy.GetComponent<monster_dmg>().TakeDmg(3);
             }
         }
         else if(attack_vertical > 0)
@@ -65,7 +65,7 @@ public class Attacks : MonoBehaviour
 
             foreach (Collider2D enemy in hit_enemies)
             {
-                Debug.Log("Hit!");
+                enemy.GetComponent<monster_dmg>().TakeDmg(3);
             }
         }
     }
@@ -76,7 +76,7 @@ public class Attacks : MonoBehaviour
 
         foreach (Collider2D enemy in hit_enemies)
         {
-            Debug.Log("Hit!");
+            enemy.GetComponent<monster_dmg>().TakeDmg(6);
         }
     }
 
@@ -86,7 +86,7 @@ public class Attacks : MonoBehaviour
 
         foreach (Collider2D enemy in hit_enemies)
         {
-            Debug.Log("Hit!");
+            enemy.GetComponent<monster_dmg>().TakeDmg(100);
         }
     }
 
