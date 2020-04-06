@@ -67,7 +67,7 @@ public class instantiateTiles : MonoBehaviour
             }
         }
         AstarPath.active.Scan();
-        for (int i = 0; i < num_of_ground/10; i++)
+        for (int i = 0; i < num_of_ground/100; i++)
         {
             bool sucess = false;
             while (sucess == false)

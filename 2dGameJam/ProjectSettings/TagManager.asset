@@ -9,6 +9,7 @@ TagManager:
   - Basic_attack
   - Powerful
   - Piruet
+  - monster
   layers:
   - Default
   - TransparentFX

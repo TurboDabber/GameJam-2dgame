@@ -94,9 +94,10 @@ GameObject:
   - component: {fileID: 3296524336077992545}
   - component: {fileID: 3296524336077992606}
   - component: {fileID: 3296524336077992546}
+  - component: {fileID: 6486615180507018884}
   m_Layer: 0
-  m_Name: Enemy2
-  m_TagString: Untagged
+  m_Name: Enemy420
+  m_TagString: monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -220,3 +221,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.8}
   m_EdgeRadius: 0
+--- !u!114 &6486615180507018884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3296524336077992607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 290e918993ea24c4fae2b43545f697ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health_now: 0
+  player: {fileID: 0}
+  itself: {fileID: 3296524336077992607}
+  aIPath: {fileID: 0}
