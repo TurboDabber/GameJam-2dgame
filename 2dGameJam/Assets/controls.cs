@@ -20,6 +20,7 @@ public class controls : MonoBehaviour
     float heal_timer;
     float basic_attack_time;
     float basic_attack_timer = 0;
+    bool active_animation = false;
     Vector2 movement;
     Vector2 prev_move;
 
@@ -53,18 +54,15 @@ public class controls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(movement.x != 0 || movement.y != 0)
+        if((movement.x != 0 || movement.y != 0))
         {
             prev_move = movement;
             animator.SetFloat("Atc_hor", prev_move.x);
             animator.SetFloat("Atc_vert", prev_move.y);
         }
 
-        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Powerful_attack"))
-        {
-            movement.x = Input.GetAxisRaw("Horizontal");
-            movement.y = Input.GetAxisRaw("Vertical");
-        }
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
 
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
@@ -79,21 +77,25 @@ public class controls : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) && basic_attack_timer > basic_attack_time)
             {
                 animator.SetTrigger("Basic_attack");
+                active_animation = true;
                 basic_attack_timer = 0;
             }
             else if (Input.GetKeyDown(KeyCode.LeftControl) && piruet_timer >= piruet_cooldown)
             {
                 animator.SetTrigger("Piruet");
+                active_animation = true;
                 piruet_timer = 0;
             }     
             else if (Input.GetKeyDown(KeyCode.LeftShift) && powerful_timer >= powerful_cooldown)
             {
                 animator.SetTrigger("Powerful");
+                active_animation = true;
                 powerful_timer = 0;
             }    
             else if (Input.GetKeyDown(KeyCode.LeftAlt) && heal_timer >= heal_cooldown)
             {
                 animator.SetTrigger("Sword_up");
+                active_animation = true;
                 heal_timer = 0;
             }    
         }
@@ -109,10 +111,14 @@ public class controls : MonoBehaviour
             powerful_timer += Time.deltaTime;
         if (heal_timer < heal_cooldown)
             heal_timer += Time.deltaTime;
+
+        if (basic_attack_timer > basic_attack_time && piruet_timer > piruet_time && powerful_timer > powerful_time && heal_timer > heal_time)
+            active_animation = false;
     }
 
     private void FixedUpdate()
     {
-        rigidbody.MovePosition(rigidbody.position + movement * movement_speed * Time.fixedDeltaTime);
+        if (!active_animation)
+            rigidbody.MovePosition(rigidbody.position + movement * movement_speed * Time.fixedDeltaTime);
     }
 }
