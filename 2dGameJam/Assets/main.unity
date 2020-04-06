@@ -224,6 +224,9 @@ MonoBehaviour:
   rigidbody: {fileID: 8501985}
   animator: {fileID: 8501987}
   time_to_dance: 30
+  piruet_cooldown: 10
+  powerful_cooldown: 20
+  heal_cooldown: 20
 --- !u!50 &8501985
 Rigidbody2D:
   serializedVersion: 4
@@ -274,7 +277,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 55888813296a3df46ac4750022527bc8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
