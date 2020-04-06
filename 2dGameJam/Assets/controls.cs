@@ -30,6 +30,8 @@ public class controls : MonoBehaviour
     private void Start()
     {
         piruet.setMax(piruet_cooldown);
+        powerful.setMax(powerful_cooldown);
+        heal.setMax(heal_cooldown);
         AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
 
         foreach (AnimationClip clip in clips)
@@ -58,7 +60,11 @@ public class controls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if((movement.x != 0 || movement.y != 0))
+        piruet.set_health(piruet_timer);
+        powerful.set_health(powerful_timer);
+        heal.set_health(heal_timer);
+
+        if ((movement.x != 0 || movement.y != 0))
         {
             prev_move = movement;
             animator.SetFloat("Atc_hor", prev_move.x);
