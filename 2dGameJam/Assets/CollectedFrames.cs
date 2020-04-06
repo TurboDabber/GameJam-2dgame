@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class CollectedFrames : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int fillAmount;
-    public int maxAmount;
+    public string fillAmount;
+    public float maxAmount;
 
     [SerializeField]
     public Text information;
 
-   public void setText(int i)
+   public void setText(string i)
     {
         fillAmount = i;
         string Temp = fillAmount + " / " + maxAmount;
