@@ -11,7 +11,11 @@ public class CollectedFrames : MonoBehaviour
 
     [SerializeField]
     public Text information;
-
+    
+    public void text2(string i)
+    {
+        information.text = i;
+    }
    public void setText(string i)
     {
         fillAmount = i;

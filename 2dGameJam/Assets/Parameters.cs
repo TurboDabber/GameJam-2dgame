@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-
+using UnityEngine.SceneManagement;
 public class Parameters : MonoBehaviour
 {
     public const int health_max = 100;
@@ -13,7 +13,9 @@ public class Parameters : MonoBehaviour
     public bool won = false;
     public Health healthBar;/// UI bar 
     public CollectedFrames collected;
+    public CollectedFrames message;
     public GameObject Ending;
+    public int count=0;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,16 @@ public class Parameters : MonoBehaviour
         //    TakeDmg(20);
 
         //}
+        if (fail == true||won==true)
+        {
+           
+            count++;
+
+        }
+        if (count == 1000)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
 
     }
     void TakeDmg(float dmg_given)
@@ -42,6 +54,8 @@ public class Parameters : MonoBehaviour
         if (health_now < 0)
         {
             fail = true;
+            message.text2("PRZEGRALES");
+          
         }
 
         healthBar.set_health(health_now);
@@ -70,6 +84,7 @@ public class Parameters : MonoBehaviour
         if (collision.gameObject.tag == "Finish")
         {
             won = true;
+            message.text2("Wygrales");
         }
         if(collision.gameObject.tag=="monster")
         {
