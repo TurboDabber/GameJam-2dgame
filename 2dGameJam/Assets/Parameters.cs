@@ -8,7 +8,8 @@ public class Parameters : MonoBehaviour
     public int health_now = 100;
     public int collected_frames = 0;
     public const int all_frames = 4;
-    bool fail = false;
+    public bool fail = false;
+    public bool won = false;
     public Health healthBar;/// UI bar 
     public CollectedFrames collected;
     public GameObject Ending;
@@ -65,6 +66,9 @@ public class Parameters : MonoBehaviour
             }
             Destroy(collision.gameObject);
         }
-
+        if (collision.gameObject.tag == "Finish")
+        {
+            won = true;
+        }
     }
 }
