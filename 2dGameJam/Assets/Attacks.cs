@@ -9,6 +9,7 @@ public class Attacks : MonoBehaviour
     public Transform left_attack_point;
     public Transform right_attack_point;
     public Transform piruet_point;
+    public Transform powerful_point;
     public float attack_range = 0.5f;
     public float piruet_range = 2f;
     public LayerMask enemy_layers;
@@ -81,41 +82,11 @@ public class Attacks : MonoBehaviour
 
     public void Powerful_attack()
     {
-        if (attack_horizontal < 0)
-        {
-            Collider2D[] hit_enemies = Physics2D.OverlapCircleAll(left_attack_point.position, attack_range, enemy_layers);
+        Collider2D[] hit_enemies = Physics2D.OverlapCircleAll(powerful_point.position, piruet_range, enemy_layers);
 
-            foreach (Collider2D enemy in hit_enemies)
-            {
-                Debug.Log("Hit!");
-            }
-        }
-        else if (attack_horizontal > 0)
+        foreach (Collider2D enemy in hit_enemies)
         {
-            Collider2D[] hit_enemies = Physics2D.OverlapCircleAll(right_attack_point.position, attack_range, enemy_layers);
-
-            foreach (Collider2D enemy in hit_enemies)
-            {
-                Debug.Log("Hit!");
-            }
-        }
-        else if (attack_vertical < 0)
-        {
-            Collider2D[] hit_enemies = Physics2D.OverlapCircleAll(front_attack_point.position, attack_range, enemy_layers);
-
-            foreach (Collider2D enemy in hit_enemies)
-            {
-                Debug.Log("Hit!");
-            }
-        }
-        else if (attack_vertical > 0)
-        {
-            Collider2D[] hit_enemies = Physics2D.OverlapCircleAll(back_attack_point.position, attack_range, enemy_layers);
-
-            foreach (Collider2D enemy in hit_enemies)
-            {
-                Debug.Log("Hit!");
-            }
+            Debug.Log("Hit!");
         }
     }
 

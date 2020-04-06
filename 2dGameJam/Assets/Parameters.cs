@@ -71,9 +71,5 @@ public class Parameters : MonoBehaviour
         {
             won = true;
         }
-        if(collision.gameObject.tag=="monster")
-        {
-            TakeDmg(10);
-        }
     }
 }

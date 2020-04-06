@@ -6,10 +6,9 @@ TagManager:
   tags:
   - Room
   - Frame
-  - monster
-  - whril
-  - strong
-  - player_attack
+  - Basic_attack
+  - Powerful
+  - Piruet
   layers:
   - Default
   - TransparentFX
@@ -23,7 +22,7 @@ TagManager:
   - Terrain
   - Portal
   - Enemy
-  - monster
+  - 
   - 
   - 
   - 
