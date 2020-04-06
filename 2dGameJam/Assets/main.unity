@@ -350,6 +350,7 @@ MonoBehaviour:
   attack_horizontal: 0
   attack_vertical: 0
   controls: {fileID: 8501984}
+  parameters: {fileID: 8501988}
 --- !u!1 &27421998
 GameObject:
   m_ObjectHideFlags: 0

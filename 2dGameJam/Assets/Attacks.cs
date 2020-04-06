@@ -16,6 +16,7 @@ public class Attacks : MonoBehaviour
     public float attack_horizontal;
     public float attack_vertical;
     public controls controls;
+    public Parameters parameters;
 
     // Start is called before the first frame update
     void Start()
@@ -92,7 +93,10 @@ public class Attacks : MonoBehaviour
 
     public void Heal()
     {
-
+        if ((parameters.health_now += 40) < 100)
+            parameters.health_now += 40;
+        else
+            parameters.health_now = 100;
     }
 
     private void OnDrawGizmosSelected()
