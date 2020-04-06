@@ -42,7 +42,8 @@ public class instantiateTiles : MonoBehaviour
                     Instantiate(myWalls[random], buff_vec, Quaternion.identity);
                 }
             }
-        for(int i=0;i<4;i++)
+        AstarPath.active.Scan();
+        for (int i=0;i<4;i++)
         {
             bool sucess = false;
             while(sucess==false)
