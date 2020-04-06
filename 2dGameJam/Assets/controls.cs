@@ -12,12 +12,15 @@ public class controls : MonoBehaviour
     public float piruet_cooldown;
     float piruet_time;
     float piruet_timer;
+    public Health piruet;
     public float powerful_cooldown;
     float powerful_time;
     float powerful_timer;
+    public Health powerful;
     public float heal_cooldown;
     float heal_time;
     float heal_timer;
+    public Health heal;
     float basic_attack_time;
     float basic_attack_timer = 0;
     bool active_animation = false;

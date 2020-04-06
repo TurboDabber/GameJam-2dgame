@@ -49,7 +49,7 @@ public class Parameters : MonoBehaviour
     void AddFrames()
     {
         collected_frames++;
-        collected.fillAmount = collected_frames.ToString();
+        collected.fillAmount = collected_frames.ToString( );
         collected.setText(collected.fillAmount);
 
     }
