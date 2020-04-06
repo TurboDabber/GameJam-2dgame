@@ -7,6 +7,7 @@ public class instantiateTiles : MonoBehaviour
     public GameObject[] myGrounds;
     public GameObject[] myWalls;
     public GameObject[] myPorals;
+
     public const int width=500;
     public const int height=500;
     public short[,] game_board = new short[height, width];
@@ -62,8 +63,9 @@ public class instantiateTiles : MonoBehaviour
                 }
             }
         }
+        AstarPath.active.Scan();
 
-        
+
     }
 
     void Board_init()
