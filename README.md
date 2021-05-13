@@ -4,4 +4,3 @@ Created with Unity. The topic of game jam is rebuild.
 2. Create levels
 3. Movement
 4. Enemies
-5. BARRELS! (or boxes)
